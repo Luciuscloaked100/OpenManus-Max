@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Config (user-specific)
+config/config.toml
+config.toml
+
+# Logs & DB
+*.log
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Workspace
+workspace/*
+!workspace/example.txt

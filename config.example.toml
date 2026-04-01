@@ -1,0 +1,95 @@
+# OpenManus-Max Configuration
+# Copy to config.toml and customize
+
+project_name = "OpenManus-Max"
+workspace_dir = "~/.openmanus-max/workspace"
+log_level = "INFO"
+max_steps = 30
+
+# ============================================================
+# LLM Configuration
+# ============================================================
+[llm]
+model = "gpt-4.1-mini"
+base_url = "https://api.openai.com/v1"
+api_key = ""                    # Or set OPENAI_API_KEY env var
+max_tokens = 8192
+temperature = 0.0
+timeout = 300
+
+# ============================================================
+# Permission Mode
+# ============================================================
+# Controls how much access the Agent has to your system
+#
+# Modes:
+#   yolo     - Full unrestricted access. No confirmations. DANGEROUS.
+#   standard - Default. System-level operations need approval.
+#   strict   - All write/execute operations need approval.
+#   sandbox  - Isolated execution. Docker required.
+#
+[permission]
+mode = "standard"               # yolo / standard / strict / sandbox
+docker_image = "python:3.11-slim"
+execution_backend = "auto"      # auto / local / docker
+
+# ============================================================
+# Skill System
+# ============================================================
+[skill]
+enabled = true
+user_skills_dir = "~/.openmanus-max/skills"
+installed_skills_dir = "~/.openmanus-max/installed"
+max_skills_per_task = 3
+max_context_tokens = 4000
+
+# ============================================================
+# Routine Engine
+# ============================================================
+[routine]
+enabled = false
+db_path = "~/.openmanus-max/routines.db"
+poll_interval = 1.0
+max_concurrent = 3
+
+# ============================================================
+# Sandbox (Legacy)
+# ============================================================
+[sandbox]
+enabled = true
+type = "local"
+work_dir = "/tmp/openmanus-max-workspace"
+timeout = 120
+
+# ============================================================
+# Search
+# ============================================================
+[search]
+engine = "duckduckgo"
+api_key = ""
+max_results = 10
+
+# ============================================================
+# Scheduler
+# ============================================================
+[scheduler]
+enabled = true
+db_path = "~/.openmanus-max/scheduler.db"
+max_concurrent = 5
+
+# ============================================================
+# Memory
+# ============================================================
+[memory]
+working_memory_size = 10
+episodic_summary_threshold = 5
+max_total_messages = 200
+
+# ============================================================
+# Media
+# ============================================================
+[media]
+image_api = "openai"
+image_api_key = ""
+tts_api = "openai"
+tts_api_key = ""

@@ -1,0 +1,1 @@
+This is the default workspace directory for OpenManus-Max agent.

@@ -1,0 +1,29 @@
+# OpenManus-Max - Core Dependencies
+openai>=1.30.0
+pydantic>=2.0.0
+httpx>=0.27.0
+
+# Optional: Search
+duckduckgo-search>=6.0.0
+
+# Optional: Browser
+# playwright>=1.44.0  # 不包含在打包中，需要额外安装浏览器
+
+# Optional: Media
+# (httpx already included)
+
+# Optional: Visualization
+# matplotlib>=3.8.0  # 打包时排除以减小体积
+# seaborn>=0.13.0
+
+# Optional: Web Crawling
+beautifulsoup4>=4.12.0
+html2text>=2024.2.0
+
+# Optional: A2A Protocol
+fastapi>=0.111.0
+uvicorn>=0.30.0
+
+# Optional: RPA
+# pyautogui>=0.9.54  # 打包时排除，桌面自动化需要系统级依赖
+Pillow>=10.0.0
